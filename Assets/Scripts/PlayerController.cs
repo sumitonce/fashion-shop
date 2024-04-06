@@ -17,11 +17,13 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private Vector3 inputVector;
     private PlayerInventory inventory;
+    private PlayerUI playerUI;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         inventory = GetComponent<PlayerInventory>();
+        playerUI = GetComponent<PlayerUI>();
     }
 
     private void FixedUpdate()

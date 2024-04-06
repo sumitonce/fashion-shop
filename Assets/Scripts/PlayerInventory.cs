@@ -8,8 +8,21 @@ public class PlayerInventory : MonoBehaviour
 {
     public List<Cloth> cloths;// { get; set; }
     public Transform itemHoldingSlot;
-
+    
+    [SerializeField]
+    private int maxItems = 10;
     private float clothZOffset = 0.07f; // cloth z multiplier to stack cloths
+
+    public bool IsInventoryHasSpace
+    {
+        get
+        {
+            if (cloths.Count < maxItems)
+                return true;
+            else
+                return false;
+        }
+    }
 
     private void Awake()
     {
