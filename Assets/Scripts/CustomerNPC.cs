@@ -24,6 +24,8 @@ public class CustomerNPC : MonoBehaviour
     public NPCManager npcManager { get; set; }
 
     private CustomerState currentState;
+    
+    [SerializeField]
     private ClothType requiredClothType; // Set random cloth type
     private Vector3 spawnPosition;
     private Texture defaultTexture;
