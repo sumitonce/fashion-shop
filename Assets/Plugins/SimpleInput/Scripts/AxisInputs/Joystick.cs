@@ -211,7 +211,7 @@ namespace SimpleInputNamespace
 			else
 				opacity = Mathf.Max( 0f, opacity - Time.unscaledDeltaTime * 4f );
 
-			Color c = thumb.color;
+			/*Color c = thumb.color;
 			c.a = opacity;
 			thumb.color = c;
 
@@ -220,7 +220,7 @@ namespace SimpleInputNamespace
 				c = background.color;
 				c.a = opacity;
 				background.color = c;
-			}
+			}*/
 		}
 	}
 }
