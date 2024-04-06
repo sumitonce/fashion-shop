@@ -24,6 +24,17 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
+    public bool IsPlayerHasItems
+    {
+        get
+        {
+            if (cloths.Count > 0)
+                return true;
+            else
+                return false;
+        }
+    }
+
     private void Awake()
     {
         cloths = new List<Cloth>();

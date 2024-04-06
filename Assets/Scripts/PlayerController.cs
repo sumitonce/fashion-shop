@@ -34,6 +34,13 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         PlayerInput();
+        
+        // Update payer anim layer weight
+        
+        if(inventory.IsPlayerHasItems)
+            anim.SetLayerWeight(1, 1f);
+        else
+            anim.SetLayerWeight(1, 0f);
     }
 
 
