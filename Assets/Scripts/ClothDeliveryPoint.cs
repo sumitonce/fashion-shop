@@ -2,14 +2,27 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ClothDeliveryPoint : MonoBehaviour, IItemInteraction
 {
-    public bool IsOccupied { get; set; }
+    public ClothIcon clothIcon;
     
+    public bool IsOccupied { get; set; }
     private CustomerNPC currentNPC;
 
-    public static event Action<ClothDeliveryPoint> OnDeliveryPointFreed; 
+    public static event Action<ClothDeliveryPoint> OnDeliveryPointFreed;
+    
+    [SerializeField]
+    private Vector3 clothIconOffset;
+
+    private void Update()
+    {
+        if (currentNPC && IsOccupied && clothIcon.gameObject.activeInHierarchy)
+        {
+            clothIcon.transform.position = Camera.main.WorldToScreenPoint(currentNPC.transform.position + clothIconOffset);
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -17,6 +30,7 @@ public class ClothDeliveryPoint : MonoBehaviour, IItemInteraction
         {
             currentNPC = other.GetComponent<CustomerNPC>();
             currentNPC.SetState(CustomerState.Waiting);
+            SetClothIcon();
         }
     }
 
@@ -46,6 +60,12 @@ public class ClothDeliveryPoint : MonoBehaviour, IItemInteraction
     {
     }
 
+    private void SetClothIcon()
+    {
+        clothIcon.gameObject.SetActive(true);
+        clothIcon.SetClothIcon(currentNPC.GetRequiredClothType());
+    }
+
     public void Occupy()
     {
         IsOccupied = true;
@@ -55,5 +75,6 @@ public class ClothDeliveryPoint : MonoBehaviour, IItemInteraction
     {
         IsOccupied = false;
         OnDeliveryPointFreed?.Invoke(this);
+        clothIcon.gameObject.SetActive(false);
     }
 }

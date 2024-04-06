@@ -1715,7 +1715,7 @@ PrefabInstance:
         type: 3}
       propertyPath: cloth
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1599574767}
     - target: {fileID: 8523841502738944130, guid: 7f937c8b191eb0741aeaad5285f09f41,
         type: 3}
       propertyPath: m_Name
@@ -2850,6 +2850,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4434182444100952261, guid: 6f73601d8dd64624d99b292ae1aea816,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6947957208882435181, guid: 6f73601d8dd64624d99b292ae1aea816,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4108,6 +4113,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eec0d3e56c0b5ba4d8096335e2f0b667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1599574767 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8523841502738944130, guid: 7f937c8b191eb0741aeaad5285f09f41,
+    type: 3}
+  m_PrefabInstance: {fileID: 632852720}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1611604213 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3144804292161984513, guid: ee3a5d4f787245c419095c2701d8b260,
@@ -5512,6 +5523,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 99800586005651750, guid: 6f73601d8dd64624d99b292ae1aea816,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 961739752}
     - target: {fileID: 6947957208882435181, guid: 6f73601d8dd64624d99b292ae1aea816,
         type: 3}
       propertyPath: m_LocalPosition.x
